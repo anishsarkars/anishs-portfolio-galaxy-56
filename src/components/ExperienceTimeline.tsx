@@ -40,21 +40,12 @@ const experiences = [
     location: 'India',
     description: 'Developed frontend components and interfaces for web applications as part of the intern team.',
     link: '#'
-  },
-  {
-    title: 'Founding Member',
-    company: 'Aldegos',
-    logo: 'https://placehold.co/400x400/e2e8f0/1e293b?text=A&font=playfair',
-    period: 'Past',
-    location: 'Indore, Madhya Pradesh, India',
-    description: 'Part of the founding team, contributing to the establishment and growth of the company.',
-    link: '#'
   }
 ];
 
 const ExperienceTimeline = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {experiences.map((experience, index) => (
         <motion.div 
           key={index}
@@ -63,22 +54,22 @@ const ExperienceTimeline = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-          <Card className="glass-card overflow-hidden hover:shadow-glass-hover group">
+          <Card className="minimal-card overflow-hidden">
             <div className="md:flex">
-              <div className="md:w-1/4 bg-secondary/30 flex items-center justify-center p-6">
-                <div className="w-20 h-20 rounded-full overflow-hidden bg-white/80 flex items-center justify-center p-1 shadow-sm">
+              <div className="md:w-52 bg-secondary/50 flex items-center justify-center p-6">
+                <div className="w-16 h-16 rounded-full overflow-hidden bg-white flex items-center justify-center p-1 shadow-sm">
                   <img 
                     src={experience.logo} 
                     alt={experience.company} 
-                    className="w-full h-full object-contain rounded-full group-hover:scale-105 transition-transform"
+                    className="w-full h-full object-contain rounded-full"
                   />
                 </div>
               </div>
-              <div className="p-6 md:w-3/4">
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+              <div className="p-6 md:flex-1">
+                <div className="md:flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-medium text-primary">{experience.title}</h3>
-                    <p className="text-lg">{experience.company}</p>
+                    <h3 className="text-lg font-medium">{experience.title}</h3>
+                    <p className="text-base">{experience.company}</p>
                   </div>
                   <div className="flex items-center gap-1 text-sm text-muted-foreground mt-2 md:mt-0">
                     <Calendar size={14} />
@@ -96,7 +87,7 @@ const ExperienceTimeline = () => {
                     href={experience.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                    className="inline-flex items-center gap-1 text-sm hover:underline"
                   >
                     Visit Website <ExternalLink size={14} />
                   </a>

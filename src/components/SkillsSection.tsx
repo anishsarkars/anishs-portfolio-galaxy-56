@@ -40,7 +40,7 @@ const SkillBar = ({ name, level }: { name: string, level: number }) => {
         <span className="text-sm font-medium">{name}</span>
         <span className="text-sm text-muted-foreground">{level}%</span>
       </div>
-      <div className="h-2 bg-secondary rounded-full overflow-hidden">
+      <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
         <motion.div 
           className="h-full bg-primary"
           initial={{ width: 0 }}
@@ -55,18 +55,18 @@ const SkillBar = ({ name, level }: { name: string, level: number }) => {
 
 const SkillsSection = () => {
   return (
-    <Card className="glass-card p-8">
+    <Card className="minimal-card p-6">
       <Tabs defaultValue="frontend" className="w-full">
         <div className="flex justify-center mb-8">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 w-full max-w-xl">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 w-full max-w-md">
             <TabsTrigger value="frontend">Frontend</TabsTrigger>
             <TabsTrigger value="backend">Backend</TabsTrigger>
-            <TabsTrigger value="other">Other Skills</TabsTrigger>
+            <TabsTrigger value="other">Other</TabsTrigger>
             <TabsTrigger value="languages">Languages</TabsTrigger>
           </TabsList>
         </div>
         
-        <TabsContent value="frontend" className="space-y-8">
+        <TabsContent value="frontend" className="space-y-8 pt-2">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {frontendSkills.map((skill, index) => (
               <motion.div 
@@ -82,7 +82,7 @@ const SkillsSection = () => {
           </div>
         </TabsContent>
         
-        <TabsContent value="backend" className="space-y-8">
+        <TabsContent value="backend" className="space-y-8 pt-2">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {backendSkills.map((skill, index) => (
               <motion.div 
@@ -98,7 +98,7 @@ const SkillsSection = () => {
           </div>
         </TabsContent>
         
-        <TabsContent value="other" className="space-y-8">
+        <TabsContent value="other" className="space-y-8 pt-2">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {otherSkills.map((skill, index) => (
               <motion.div 
@@ -114,7 +114,7 @@ const SkillsSection = () => {
           </div>
         </TabsContent>
         
-        <TabsContent value="languages" className="space-y-8">
+        <TabsContent value="languages" className="space-y-8 pt-2">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {languages.map((language, index) => (
               <motion.div 

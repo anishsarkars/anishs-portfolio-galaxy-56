@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Code, Github } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -47,7 +47,6 @@ const projects = [
 
 const ProjectsSection = () => {
   const [visibleProjects, setVisibleProjects] = useState(2);
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const loadMoreProjects = () => {
     setVisibleProjects(projects.length);
@@ -63,34 +62,31 @@ const ProjectsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            onMouseEnter={() => setHoveredProject(index)}
-            onMouseLeave={() => setHoveredProject(null)}
-            className="relative"
           >
-            <Card className="overflow-hidden glass-card h-full flex flex-col">
-              <div className="relative h-56 overflow-hidden">
+            <Card className="minimal-card overflow-hidden h-full flex flex-col">
+              <div className="relative h-48 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
+                <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
                   {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="secondary" className="bg-white/20 backdrop-blur-sm text-white border-none">
+                    <Badge key={tagIndex} variant="secondary" className="bg-white/90 text-primary text-xs border-none">
                       {tag}
                     </Badge>
                   ))}
                 </div>
                 {project.featured && (
-                  <div className="absolute top-4 right-4">
+                  <div className="absolute top-3 right-3">
                     <Badge className="bg-primary border-none">Featured</Badge>
                   </div>
                 )}
               </div>
               
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-medium mb-2">{project.title}</h3>
+              <div className="p-5 flex flex-col flex-grow">
+                <h3 className="text-lg font-medium mb-2">{project.title}</h3>
                 <p className="text-muted-foreground text-sm mb-6 flex-grow">{project.description}</p>
                 
                 <div className="flex gap-3 mt-auto">

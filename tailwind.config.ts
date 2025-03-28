@@ -53,20 +53,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
 			},
 			fontFamily: {
-				sans: ['SF Pro Display', 'Inter', 'sans-serif'],
-				mono: ['SF Mono', 'monospace'],
+				sans: ['Inter', 'SF Pro Display', 'sans-serif'],
+				mono: ['Menlo', 'SF Mono', 'monospace'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -94,22 +84,10 @@ export default {
 					'0%': { transform: 'scale(0.95)', opacity: '0' },
 					'100%': { transform: 'scale(1)', opacity: '1' }
 				},
-				'slide-up': {
-					'0%': { transform: 'translateY(20px)', opacity: '0' },
-					'100%': { transform: 'translateY(0)', opacity: '1' }
-				},
-				'slide-down': {
-					'0%': { transform: 'translateY(-20px)', opacity: '0' },
-					'100%': { transform: 'translateY(0)', opacity: '1' }
-				},
 				'text-shimmer': {
 					'0%': { backgroundPosition: '0% 50%' },
 					'100%': { backgroundPosition: '100% 50%' }
 				},
-				float: {
-					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-10px)' }
-				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -117,24 +95,7 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-out': 'fade-out 0.5s ease-out',
 				'scale-in': 'scale-in 0.7s ease-out',
-				'slide-up': 'slide-up 0.7s ease-out',
-				'slide-down': 'slide-down 0.7s ease-out',
 				'text-shimmer': 'text-shimmer 3s ease infinite',
-				float: 'float 4s ease-in-out infinite'
-			},
-			backdropBlur: {
-				xs: '2px',
-				sm: '4px',
-			},
-			boxShadow: {
-				'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
-				'glass-hover': '0 8px 32px rgba(0, 0, 0, 0.15)',
-				'neu-light': '10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff',
-				'neu-dark': '8px 8px 16px #151515, -8px -8px 16px #272727',
-			},
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'shimmer': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%)',
 			},
 		}
 	},
